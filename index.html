@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Raha — Artist, storyteller and NFT creator. A collection of hand-drawn artworks inspired by memory, imagination and meaningful moments.">
-
 <title>RAHA — Artist & NFT Creator</title>
+
+<meta name="description" content="RAHA — An artist creating hand-drawn works shaped by memory, imagination, and stories worth keeping forever.">
+
+<meta property="og:title" content="RAHA — Artist & NFT Creator">
+<meta property="og:description" content="Art born from memory, imagination, and moments worth keeping forever.">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,492 +18,435 @@
 
 <style>
 
-:root {
-    --black: #090909;
-    --dark: #111111;
-    --soft-dark: #171717;
-    --white: #f5f2ec;
-    --gray: #a5a29d;
-    --gold: #c9a96e;
-    --line: rgba(255,255,255,.12);
+:root{
+    --black:#090909;
+    --dark:#111111;
+    --soft-dark:#171717;
+    --white:#f5f2ec;
+    --gray:#a5a29d;
+    --gold:#c9a96e;
+    --line:rgba(245,242,236,.14);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: var(--black);
-    color: var(--white);
-    font-family: Inter, sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
+body{
+    background:var(--black);
+    color:var(--white);
+    font-family:Inter,sans-serif;
+    line-height:1.6;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+img{
+    display:block;
+    width:100%;
 }
 
-/* ================= NAVIGATION ================= */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 22px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(
-        to bottom,
-        rgba(9,9,9,.9),
-        rgba(9,9,9,0)
-    );
+.container{
+    width:min(1180px,90%);
+    margin:auto;
 }
 
-.logo {
-    font-family: "DM Serif Display", serif;
-    font-size: 25px;
-    letter-spacing: 3px;
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    background:rgba(9,9,9,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
 }
 
-.nav-links {
-    display: flex;
-    gap: 32px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.nav-inner{
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.nav-links a {
-    opacity: .75;
-    transition: .3s;
+.logo{
+    font-family:"DM Serif Display",serif;
+    font-size:28px;
+    letter-spacing:2px;
 }
 
-.nav-links a:hover {
-    opacity: 1;
-    color: var(--gold);
+.nav-links{
+    display:flex;
+    gap:32px;
+    font-size:13px;
+    color:var(--gray);
 }
 
-/* ================= HERO ================= */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(
-            circle at 75% 40%,
-            rgba(201,169,110,.09),
-            transparent 35%
-        );
+.nav-links a{
+    transition:.3s;
 }
 
-.hero-inner {
-    width: 90%;
-    max-width: 1250px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
+.nav-links a:hover{
+    color:var(--white);
 }
 
-.hero-text {
-    animation: fadeUp 1.2s ease;
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding-top:76px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:70px;
 }
 
-.eyebrow {
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
+.hero-text{
+    padding:50px 0;
 }
 
-.hero h1 {
-    font-family: "DM Serif Display", serif;
-    font-size: clamp(70px, 10vw, 145px);
-    font-weight: 400;
-    line-height: .85;
-    letter-spacing: -4px;
+.kicker{
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:22px;
 }
 
-.hero-subtitle {
-    margin-top: 30px;
-    color: var(--gray);
-    font-size: 16px;
-    max-width: 430px;
+.hero h1{
+    font-family:"DM Serif Display",serif;
+    font-size:clamp(70px,10vw,150px);
+    line-height:.85;
+    font-weight:400;
+    letter-spacing:-4px;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 38px;
-    flex-wrap: wrap;
+.hero-subtitle{
+    margin-top:28px;
+    max-width:500px;
+    color:var(--gray);
+    font-size:17px;
+    font-weight:300;
 }
 
-.button {
-    padding: 14px 25px;
-    border: 1px solid var(--line);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: .3s;
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
 }
 
-.button.primary {
-    background: var(--white);
-    color: var(--black);
+.btn{
+    border:1px solid var(--line);
+    padding:13px 23px;
+    font-size:12px;
+    letter-spacing:1px;
+    transition:.3s;
 }
 
-.button:hover {
-    transform: translateY(-3px);
-    border-color: var(--gold);
+.btn:hover{
+    border-color:var(--gold);
+    color:var(--gold);
 }
 
-.hero-art {
-    position: relative;
-    animation: fadeIn 1.5s ease;
+.hero-image{
+    height:650px;
+    background:var(--dark);
+    padding:18px;
 }
 
-.hero-art img {
-    width: 100%;
-    max-height: 650px;
-    object-fit: contain;
-    filter: saturate(.9);
+.hero-image img{
+    height:100%;
+    object-fit:contain;
 }
 
-.hero-caption {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    background: rgba(0,0,0,.65);
-    padding: 9px 15px;
-    font-size: 10px;
-    letter-spacing: 2px;
+/* SECTIONS */
+
+section{
+    padding:120px 0;
+    border-top:1px solid var(--line);
 }
 
-/* ================= SECTIONS ================= */
-
-section {
-    padding: 120px 5%;
+.section-label{
+    color:var(--gold);
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:3px;
+    margin-bottom:20px;
 }
 
-.section-container {
-    max-width: 1150px;
-    margin: auto;
+.section-title{
+    font-family:"DM Serif Display",serif;
+    font-weight:400;
+    font-size:clamp(42px,6vw,75px);
+    line-height:1;
 }
 
-.section-label {
-    color: var(--gold);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 18px;
+.section-intro{
+    max-width:620px;
+    color:var(--gray);
+    margin-top:25px;
+    font-size:16px;
 }
 
-.section-title {
-    font-family: "DM Serif Display", serif;
-    font-size: clamp(42px, 6vw, 75px);
-    font-weight: 400;
-    line-height: 1.05;
+/* STORY */
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:start;
 }
 
-/* ================= STORY ================= */
-
-.story {
-    background: var(--dark);
+.story-copy{
+    color:var(--gray);
+    font-size:16px;
+    line-height:1.9;
 }
 
-.story-grid {
-    display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 100px;
-    align-items: start;
+.story-copy p+p{
+    margin-top:22px;
 }
 
-.story-text {
-    color: var(--gray);
-    font-size: 16px;
-    max-width: 650px;
+/* COLLECTION */
+
+.collection{
+    margin-top:65px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-.story-text p {
-    margin-bottom: 25px;
+.art-card{
+    background:var(--dark);
+    border:1px solid var(--line);
+    transition:.35s;
 }
 
-.quote {
-    margin-top: 45px;
-    border-left: 1px solid var(--gold);
-    padding-left: 25px;
-    font-family: "DM Serif Display", serif;
-    font-size: 27px;
-    color: var(--white);
+.art-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(201,169,110,.55);
 }
 
-/* ================= COLLECTION ================= */
-
-.collection-intro {
-    max-width: 650px;
-    color: var(--gray);
-    margin: 25px 0 60px;
+.art-image{
+    height:430px;
+    padding:15px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+.art-image img{
+    height:100%;
+    object-fit:contain;
 }
 
-.art-card {
-    background: var(--soft-dark);
-    overflow: hidden;
-    transition: .45s ease;
+.art-info{
+    padding:22px;
+    border-top:1px solid var(--line);
 }
 
-.art-card:hover {
-    transform: translateY(-8px);
+.art-number{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
 }
 
-.art-image {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #1b1b1b;
+.art-title{
+    font-family:"DM Serif Display",serif;
+    font-size:28px;
+    margin-top:7px;
 }
 
-.art-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .7s ease;
+.art-description{
+    color:var(--gray);
+    font-size:13px;
+    margin-top:10px;
+    line-height:1.7;
 }
 
-.art-card:hover .art-image img {
-    transform: scale(1.04);
+/* FEATURED */
+
+.featured{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
 }
 
-.art-info {
-    padding: 25px;
+.featured-image{
+    background:var(--dark);
+    padding:20px;
 }
 
-.art-number {
-    font-size: 9px;
-    color: var(--gold);
-    letter-spacing: 3px;
+.featured-image img{
+    max-height:650px;
+    object-fit:contain;
 }
 
-.art-title {
-    font-family: "DM Serif Display", serif;
-    font-size: 29px;
-    margin-top: 7px;
+.featured-text h3{
+    font-family:"DM Serif Display",serif;
+    font-size:55px;
+    font-weight:400;
+    line-height:1;
 }
 
-.art-description {
-    color: var(--gray);
-    font-size: 13px;
-    margin-top: 10px;
+.featured-text p{
+    color:var(--gray);
+    margin-top:25px;
+    line-height:1.9;
 }
 
-.view-work {
-    display: inline-block;
-    margin-top: 18px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
+/* COLLECTORS */
+
+.collector-box{
+    margin-top:60px;
+    background:var(--soft-dark);
+    border:1px solid var(--line);
+    padding:70px;
+    text-align:center;
 }
 
-/* ================= FEATURE ================= */
-
-.feature {
-    background: #0d0d0d;
+.collector-box h3{
+    font-family:"DM Serif Display",serif;
+    font-size:55px;
+    font-weight:400;
 }
 
-.feature-grid {
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 80px;
-    align-items: center;
+.collector-box p{
+    max-width:600px;
+    margin:20px auto 35px;
+    color:var(--gray);
 }
 
-.feature-image img {
-    width: 100%;
-    max-height: 700px;
-    object-fit: contain;
+/* CONTACT */
+
+.contact{
+    text-align:center;
 }
 
-.feature-text {
-    max-width: 500px;
+.contact h2{
+    font-family:"DM Serif Display",serif;
+    font-size:clamp(55px,8vw,100px);
+    font-weight:400;
+    line-height:1;
 }
 
-.feature-text p {
-    color: var(--gray);
-    margin: 25px 0;
+.contact p{
+    color:var(--gray);
+    margin:25px auto 35px;
+    max-width:550px;
 }
 
-.feature-meta {
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 18px 0;
-    margin: 30px 0;
-    font-size: 12px;
+.contact-links{
+    display:flex;
+    justify-content:center;
+    gap:15px;
 }
 
-.feature-meta span {
-    color: var(--gold);
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:35px 0;
 }
 
-/* ================= COLLECTORS ================= */
-
-.collectors {
-    text-align: center;
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--gray);
+    font-size:11px;
 }
 
-.collector-content {
-    max-width: 700px;
-    margin: auto;
+.footer-logo{
+    font-family:"DM Serif Display",serif;
+    color:var(--white);
+    font-size:20px;
 }
 
-.collector-content p {
-    color: var(--gray);
-    margin: 25px auto 35px;
-}
+/* MOBILE */
 
-.collector-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+@media(max-width:800px){
 
-/* ================= FOOTER ================= */
-
-footer {
-    border-top: 1px solid var(--line);
-    padding: 50px 5%;
-}
-
-.footer-inner {
-    max-width: 1150px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    align-items: center;
-}
-
-.footer-logo {
-    font-family: "DM Serif Display", serif;
-    font-size: 30px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 25px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-.footer-links a:hover {
-    color: var(--gold);
-}
-
-.copyright {
-    margin-top: 35px;
-    text-align: center;
-    color: #555;
-    font-size: 10px;
-}
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    .nav-inner{
+        height:65px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    .nav-links{
+        gap:14px;
+        font-size:10px;
     }
 
-    to {
-        opacity: 1;
-    }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 800px) {
-
-    .nav-links {
-        display: none;
+    .logo{
+        font-size:23px;
     }
 
-    .hero {
-        padding-top: 100px;
+    .hero{
+        padding-top:65px;
+        grid-template-columns:1fr;
+        gap:35px;
     }
 
-    .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
+    .hero-text{
+        padding:70px 0 10px;
     }
 
-    .hero h1 {
-        font-size: 75px;
+    .hero h1{
+        font-size:80px;
     }
 
-    .hero-art {
-        order: -1;
+    .hero-image{
+        height:500px;
     }
 
-    .story-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    section{
+        padding:85px 0;
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
+    .story-grid,
+    .featured{
+        grid-template-columns:1fr;
+        gap:40px;
     }
 
-    .feature-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
+    .collection{
+        grid-template-columns:1fr;
     }
 
-    section {
-        padding: 85px 6%;
+    .art-image{
+        height:500px;
     }
 
-    .footer-inner {
-        flex-direction: column;
-        text-align: center;
+    .collector-box{
+        padding:45px 25px;
     }
 
+    .collector-box h3{
+        font-size:42px;
+    }
+
+    .featured-text h3{
+        font-size:45px;
+    }
+
+    .contact-links{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        gap:15px;
+    }
 }
 
 </style>
@@ -507,471 +454,369 @@ footer {
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<!-- NAV -->
 
-<nav class="navbar">
+<nav>
+<div class="container nav-inner">
 
-    <a href="#" class="logo">RAHA</a>
+<a href="#" class="logo">RAHA</a>
 
-    <div class="nav-links">
-        <a href="#story">Story</a>
-        <a href="#collection">Collection</a>
-        <a href="#collectors">Collectors</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div class="nav-links">
+<a href="#story">Story</a>
+<a href="#collection">Collection</a>
+<a href="#collectors">Collectors</a>
+<a href="#contact">Contact</a>
+</div>
 
+</div>
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
-<header class="hero">
+<header class="container hero">
 
-    <div class="hero-inner">
+<div class="hero-text">
 
-        <div class="hero-text">
+<div class="kicker">
+Artist · Storyteller · NFT Creator
+</div>
 
-            <div class="eyebrow">
-                Artist · Storyteller · NFT Creator
-            </div>
+<h1>RAHA</h1>
 
-            <h1>RAHA</h1>
+<p class="hero-subtitle">
+Art born from memory, imagination, and the moments worth keeping forever.
+</p>
 
-            <p class="hero-subtitle">
-                Art born from memory, imagination,
-                and the moments worth keeping forever.
-            </p>
+<div class="hero-buttons">
 
-            <div class="hero-buttons">
+<a href="#collection" class="btn">
+VIEW COLLECTION
+</a>
 
-                <a href="#collection" class="button primary">
-                    Explore Collection
-                </a>
+<a href="#contact" class="btn">
+CONTACT
+</a>
 
-                <a href="#story" class="button">
-                    Artist Story
-                </a>
+</div>
 
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="hero-art">
+<div class="hero-image">
 
-            <img src="./art1.jpg" alt="Raha — Simorgh">
+<img src="./art2.jpg"
+alt="Simorgh artwork by RAHA">
 
-            <div class="hero-caption">
-                SELECTED WORK · SIMORGH
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </header>
 
 
-<!-- ================= STORY ================= -->
+<!-- STORY -->
 
-<section id="story" class="story">
+<section id="story">
 
-    <div class="section-container">
+<div class="container">
 
-        <div class="story-grid">
+<div class="section-label">
+01 — Artist Story
+</div>
 
-            <div>
+<div class="story-grid">
 
-                <div class="section-label">
-                    01 · The Artist
-                </div>
+<div>
+<h2 class="section-title">
+More than<br>
+an image.
+</h2>
+</div>
 
-                <h2 class="section-title">
-                    More than<br>
-                    an image.
-                </h2>
+<div class="story-copy">
 
-            </div>
+<p>
+My work is rooted in memory, imagination, and the emotional moments
+that quietly become part of our lives.
+</p>
 
+<p>
+Each artwork carries a story. These are not simply handmade images,
+but fragments of moments, feelings, and memories transformed into art.
+</p>
 
-            <div class="story-text">
+<p>
+Through NFTs, I chose to preserve these moments in a new form —
+so that the stories behind them can continue to exist and be discovered
+by collectors around the world.
+</p>
 
-                <p>
-                    My work begins with moments that deserve
-                    to remain alive.
-                </p>
+</div>
 
-                <p>
-                    These artworks are rooted in drawing,
-                    imagination and personal memories.
-                    Each piece carries its own small world —
-                    a character, a story, a feeling or a moment
-                    that once mattered.
-                </p>
+</div>
 
-                <p>
-                    Turning these works into NFTs became a way
-                    of preserving those moments beyond their
-                    original time and place.
-                </p>
-
-                <div class="quote">
-                    “Some moments are too meaningful
-                    to let them disappear.”
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= COLLECTION ================= -->
+<!-- COLLECTION -->
 
 <section id="collection">
 
-    <div class="section-container">
+<div class="container">
 
-        <div class="section-label">
-            02 · Selected Works
-        </div>
+<div class="section-label">
+02 — Selected Works
+</div>
 
-        <h2 class="section-title">
-            The Collection
-        </h2>
+<h2 class="section-title">
+The Collection
+</h2>
 
-        <p class="collection-intro">
-            A selection of hand-drawn works exploring
-            imagination, childhood, mythology and memory.
-        </p>
-
-
-        <div class="gallery">
+<p class="section-intro">
+A selection of hand-drawn works where imagination, memory and storytelling
+meet.
+</p>
 
 
-            <!-- ARTWORK 01 -->
-
-            <article class="art-card">
-
-                <div class="art-image">
-
-                    <img
-                        src="./art1.jpg"
-                        alt="Simorgh — Raha Artwork"
-                    >
-
-                </div>
-
-                <div class="art-info">
-
-                    <div class="art-number">
-                        WORK 01
-                    </div>
-
-                    <h3 class="art-title">
-                        Simorgh
-                    </h3>
-
-                    <p class="art-description">
-                        A hand-drawn interpretation of the
-                        legendary Simorgh and the world of
-                        Zal — a story of protection, friendship
-                        and timeless imagination.
-                    </p>
-
-                    <a href="#simorgh" class="view-work">
-                        Discover the story →
-                    </a>
-
-                </div>
-
-            </article>
+<div class="collection">
 
 
-            <!-- ARTWORK 02 -->
+<!-- SIMORGH -->
 
-            <article class="art-card">
+<article class="art-card">
 
-                <div class="art-image">
+<div class="art-image">
 
-                    <img
-                        src="./art2.jpg"
-                        alt="Ladybug — Raha Artwork"
-                    >
+<img src="./art2.jpg"
+alt="Simorgh artwork">
 
-                </div>
+</div>
 
-                <div class="art-info">
+<div class="art-info">
 
-                    <div class="art-number">
-                        WORK 02
-                    </div>
+<div class="art-number">
+01 / 03
+</div>
 
-                    <h3 class="art-title">
-                        Ladybug
-                    </h3>
+<h3 class="art-title">
+Simorgh
+</h3>
 
-                    <p class="art-description">
-                        A playful hand-drawn work inspired
-                        by the simple beauty and charm
-                        of a tiny creature.
-                    </p>
+<p class="art-description">
+A hand-drawn interpretation of the legendary Simorgh,
+inspired by Persian mythology and the story of Zal and Simorgh.
+</p>
 
-                    <a href="#ladybug" class="view-work">
-                        View artwork →
-                    </a>
+</div>
 
-                </div>
-
-            </article>
+</article>
 
 
-            <!-- ARTWORK 03 -->
+<!-- LADYBUG -->
 
-            <article class="art-card">
+<article class="art-card">
 
-                <div class="art-image">
+<div class="art-image">
 
-                    <img
-                        src="./art3.jpg"
-                        alt="Childhood Geometry — Raha Artwork"
-                    >
+<img src="./art3.jpg"
+alt="Ladybug artwork">
 
-                </div>
+</div>
 
-                <div class="art-info">
+<div class="art-info">
 
-                    <div class="art-number">
-                        WORK 03
-                    </div>
+<div class="art-number">
+02 / 03
+</div>
 
-                    <h3 class="art-title">
-                        Childhood Geometry
-                    </h3>
+<h3 class="art-title">
+Ladybug
+</h3>
 
-                    <p class="art-description">
-                        Simple geometric forms transformed
-                        through a playful, childlike imagination.
-                    </p>
+<p class="art-description">
+A playful hand-drawn work centered around a ladybug,
+capturing a simple and imaginative visual world.
+</p>
 
-                    <a href="#geometry" class="view-work">
-                        View artwork →
-                    </a>
+</div>
 
-                </div>
-
-            </article>
+</article>
 
 
-        </div>
+<!-- CHILDHOOD GEOMETRY -->
 
-    </div>
+<article class="art-card">
+
+<div class="art-image">
+
+<img src="./art1.jpg"
+alt="Childhood Geometry artwork">
+
+</div>
+
+<div class="art-info">
+
+<div class="art-number">
+03 / 03
+</div>
+
+<h3 class="art-title">
+Childhood Geometry
+</h3>
+
+<p class="art-description">
+A playful composition of simple geometric forms,
+carrying a childlike sense of imagination and freedom.
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+
+<!-- FEATURED SIMORGH -->
+
+<div class="featured">
+
+<div class="featured-image">
+
+<img src="./art2.jpg"
+alt="Simorgh featured artwork by RAHA">
+
+</div>
+
+<div class="featured-text">
+
+<div class="section-label">
+Featured Work
+</div>
+
+<h3>
+Simorgh
+</h3>
+
+<p>
+Inspired by one of the most enduring figures of Persian mythology,
+this work explores the connection between imagination, protection,
+and storytelling.
+</p>
+
+<p>
+For me, the Simorgh is more than a mythical bird.
+It represents a story that deserves to remain alive.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= SIMORGH FEATURE ================= -->
+<!-- COLLECTORS -->
 
-<section id="simorgh" class="feature">
+<section id="collectors">
 
-    <div class="section-container">
+<div class="container">
 
-        <div class="feature-grid">
+<div class="section-label">
+03 — Collectors
+</div>
 
-            <div class="feature-image">
+<h2 class="section-title">
+Collect a story.
+</h2>
 
-                <img
-                    src="./art1.jpg"
-                    alt="Simorgh by Raha"
-                >
+<div class="collector-box">
 
-            </div>
+<h3>
+Art with a memory.
+</h3>
 
+<p>
+Each piece is created as an artwork first — and preserved as a digital
+collectible so its story can continue beyond the moment it was created.
+</p>
 
-            <div class="feature-text">
+<div class="hero-buttons" style="justify-content:center;">
 
-                <div class="section-label">
-                    Featured Work · 01
-                </div>
+<a href="#" class="btn">
+VIEW ON RARIBLE
+</a>
 
-                <h2 class="section-title">
-                    Simorgh
-                </h2>
+<a href="#" class="btn">
+FOLLOW ON X
+</a>
 
-                <p>
-                    One of the most enduring creatures of
-                    Persian mythology, the Simorgh represents
-                    wisdom, protection and an extraordinary
-                    bond between imagination and life.
-                </p>
+</div>
 
-                <p>
-                    This work is inspired by the story of
-                    Zal and Simorgh — a story in which a feather
-                    becomes a symbol of trust and friendship.
-                </p>
+</div>
 
-                <div class="feature-meta">
-
-                    <span>Medium</span><br>
-                    Hand-drawn artwork
-
-                </div>
-
-                <div class="feature-meta">
-
-                    <span>Collection</span><br>
-                    Raha — Selected Works
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= COLLECTOR SECTION ================= -->
+<!-- CONTACT -->
 
-<section id="collectors" class="collectors">
+<section id="contact" class="contact">
 
-    <div class="section-container">
+<div class="container">
 
-        <div class="collector-content">
+<div class="section-label">
+04 — Contact
+</div>
 
-            <div class="section-label">
-                03 · For Collectors
-            </div>
+<h2>
+Let's connect.
+</h2>
 
-            <h2 class="section-title">
-                Collect a story.
-            </h2>
+<p>
+For collectors, collaborations, or inquiries about the artwork,
+feel free to reach out.
+</p>
 
-            <p>
-                These works are created for collectors who
-                value originality, personal stories and art
-                with a human touch.
-            </p>
+<div class="contact-links">
 
-            <div class="collector-buttons">
+<a href="mailto:YOUR-EMAIL@example.com" class="btn">
+EMAIL
+</a>
 
-                <!-- Replace # with your real Rarible URL -->
+<a href="#" class="btn">
+X / TWITTER
+</a>
 
-                <a
-                    href="#"
-                    class="button primary"
-                    target="_blank"
-                >
-                    View on Rarible
-                </a>
+</div>
 
-                <!-- Replace # with your X profile -->
-
-                <a
-                    href="#"
-                    class="button"
-                    target="_blank"
-                >
-                    Follow on X
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="story">
-
-    <div class="section-container">
-
-        <div class="story-grid">
-
-            <div>
-
-                <div class="section-label">
-                    04 · Contact
-                </div>
-
-                <h2 class="section-title">
-                    Let's connect.
-                </h2>
-
-            </div>
-
-
-            <div class="story-text">
-
-                <p>
-                    For collecting inquiries, collaborations
-                    or questions about the artworks, please
-                    get in touch.
-                </p>
-
-                <!-- Replace with your real email -->
-
-                <a
-                    href="mailto:YOUR-EMAIL@example.com"
-                    class="button primary"
-                >
-                    Contact the Artist
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-    <div class="footer-inner">
+<div class="container footer-inner">
 
-        <div class="footer-logo">
-            RAHA
-        </div>
+<div class="footer-logo">
+RAHA
+</div>
 
-        <div class="footer-links">
+<div>
+Artist · Storyteller · NFT Creator
+</div>
 
-            <a href="#story">
-                Story
-            </a>
+<div>
+© 2026 Raha Art
+</div>
 
-            <a href="#collection">
-                Collection
-            </a>
-
-            <a href="#collectors">
-                Collectors
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 Raha Art · All Rights Reserved
-    </div>
+</div>
 
 </footer>
 
