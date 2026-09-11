@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Raha — Artist, storyteller and NFT creator. A collection of hand-drawn artworks inspired by memory, imagination and meaningful moments.">
+
+<title>RAHA — Artist & NFT Creator</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --black: #090909;
+    --dark: #111111;
+    --soft-dark: #171717;
+    --white: #f5f2ec;
+    --gray: #a5a29d;
+    --gold: #c9a96e;
+    --line: rgba(255,255,255,.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ================= NAVIGATION ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+        to bottom,
+        rgba(9,9,9,.9),
+        rgba(9,9,9,0)
+    );
+}
+
+.logo {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    opacity: .75;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--gold);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(201,169,110,.09),
+            transparent 35%
+        );
+}
+
+.hero-inner {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.hero-text {
+    animation: fadeUp 1.2s ease;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(70px, 10vw, 145px);
+    font-weight: 400;
+    line-height: .85;
+    letter-spacing: -4px;
+}
+
+.hero-subtitle {
+    margin-top: 30px;
+    color: var(--gray);
+    font-size: 16px;
+    max-width: 430px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 38px;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 14px 25px;
+    border: 1px solid var(--line);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.button.primary {
+    background: var(--white);
+    color: var(--black);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+}
+
+.hero-art {
+    position: relative;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero-art img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: contain;
+    filter: saturate(.9);
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0,0,0,.65);
+    padding: 9px 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 120px 5%;
+}
+
+.section-container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(42px, 6vw, 75px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+/* ================= STORY ================= */
+
+.story {
+    background: var(--dark);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.story-text {
+    color: var(--gray);
+    font-size: 16px;
+    max-width: 650px;
+}
+
+.story-text p {
+    margin-bottom: 25px;
+}
+
+.quote {
+    margin-top: 45px;
+    border-left: 1px solid var(--gold);
+    padding-left: 25px;
+    font-family: "DM Serif Display", serif;
+    font-size: 27px;
+    color: var(--white);
+}
+
+/* ================= COLLECTION ================= */
+
+.collection-intro {
+    max-width: 650px;
+    color: var(--gray);
+    margin: 25px 0 60px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.art-card {
+    background: var(--soft-dark);
+    overflow: hidden;
+    transition: .45s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-8px);
+}
+
+.art-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #1b1b1b;
+}
+
+.art-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .7s ease;
+}
+
+.art-card:hover .art-image img {
+    transform: scale(1.04);
+}
+
+.art-info {
+    padding: 25px;
+}
+
+.art-number {
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+.art-title {
+    font-family: "DM Serif Display", serif;
+    font-size: 29px;
+    margin-top: 7px;
+}
+
+.art-description {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.view-work {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+/* ================= FEATURE ================= */
+
+.feature {
+    background: #0d0d0d;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.feature-image img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: contain;
+}
+
+.feature-text {
+    max-width: 500px;
+}
+
+.feature-text p {
+    color: var(--gray);
+    margin: 25px 0;
+}
+
+.feature-meta {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+    margin: 30px 0;
+    font-size: 12px;
+}
+
+.feature-meta span {
+    color: var(--gold);
+}
+
+/* ================= COLLECTORS ================= */
+
+.collectors {
+    text-align: center;
+}
+
+.collector-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.collector-content p {
+    color: var(--gray);
+    margin: 25px auto 35px;
+}
+
+.collector-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    border-top: 1px solid var(--line);
+    padding: 50px 5%;
+}
+
+.footer-inner {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    margin-top: 35px;
+    text-align: center;
+    color: #555;
+    font-size: 10px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+
+    .hero-art {
+        order: -1;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    section {
+        padding: 85px 6%;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar">
+
+    <a href="#" class="logo">RAHA</a>
+
+    <div class="nav-links">
+        <a href="#story">Story</a>
+        <a href="#collection">Collection</a>
+        <a href="#collectors">Collectors</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-text">
+
+            <div class="eyebrow">
+                Artist · Storyteller · NFT Creator
+            </div>
+
+            <h1>RAHA</h1>
+
+            <p class="hero-subtitle">
+                Art born from memory, imagination,
+                and the moments worth keeping forever.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#collection" class="button primary">
+                    Explore Collection
+                </a>
+
+                <a href="#story" class="button">
+                    Artist Story
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-art">
+
+            <img src="./art1.jpg" alt="Raha — Simorgh">
+
+            <div class="hero-caption">
+                SELECTED WORK · SIMORGH
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= STORY ================= -->
+
+<section id="story" class="story">
+
+    <div class="section-container">
+
+        <div class="story-grid">
+
+            <div>
+
+                <div class="section-label">
+                    01 · The Artist
+                </div>
+
+                <h2 class="section-title">
+                    More than<br>
+                    an image.
+                </h2>
+
+            </div>
+
+
+            <div class="story-text">
+
+                <p>
+                    My work begins with moments that deserve
+                    to remain alive.
+                </p>
+
+                <p>
+                    These artworks are rooted in drawing,
+                    imagination and personal memories.
+                    Each piece carries its own small world —
+                    a character, a story, a feeling or a moment
+                    that once mattered.
+                </p>
+
+                <p>
+                    Turning these works into NFTs became a way
+                    of preserving those moments beyond their
+                    original time and place.
+                </p>
+
+                <div class="quote">
+                    “Some moments are too meaningful
+                    to let them disappear.”
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLECTION ================= -->
+
+<section id="collection">
+
+    <div class="section-container">
+
+        <div class="section-label">
+            02 · Selected Works
+        </div>
+
+        <h2 class="section-title">
+            The Collection
+        </h2>
+
+        <p class="collection-intro">
+            A selection of hand-drawn works exploring
+            imagination, childhood, mythology and memory.
+        </p>
+
+
+        <div class="gallery">
+
+
+            <!-- ARTWORK 01 -->
+
+            <article class="art-card">
+
+                <div class="art-image">
+
+                    <img
+                        src="./art1.jpg"
+                        alt="Simorgh — Raha Artwork"
+                    >
+
+                </div>
+
+                <div class="art-info">
+
+                    <div class="art-number">
+                        WORK 01
+                    </div>
+
+                    <h3 class="art-title">
+                        Simorgh
+                    </h3>
+
+                    <p class="art-description">
+                        A hand-drawn interpretation of the
+                        legendary Simorgh and the world of
+                        Zal — a story of protection, friendship
+                        and timeless imagination.
+                    </p>
+
+                    <a href="#simorgh" class="view-work">
+                        Discover the story →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTWORK 02 -->
+
+            <article class="art-card">
+
+                <div class="art-image">
+
+                    <img
+                        src="./art2.jpg"
+                        alt="Ladybug — Raha Artwork"
+                    >
+
+                </div>
+
+                <div class="art-info">
+
+                    <div class="art-number">
+                        WORK 02
+                    </div>
+
+                    <h3 class="art-title">
+                        Ladybug
+                    </h3>
+
+                    <p class="art-description">
+                        A playful hand-drawn work inspired
+                        by the simple beauty and charm
+                        of a tiny creature.
+                    </p>
+
+                    <a href="#ladybug" class="view-work">
+                        View artwork →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTWORK 03 -->
+
+            <article class="art-card">
+
+                <div class="art-image">
+
+                    <img
+                        src="./art3.jpg"
+                        alt="Childhood Geometry — Raha Artwork"
+                    >
+
+                </div>
+
+                <div class="art-info">
+
+                    <div class="art-number">
+                        WORK 03
+                    </div>
+
+                    <h3 class="art-title">
+                        Childhood Geometry
+                    </h3>
+
+                    <p class="art-description">
+                        Simple geometric forms transformed
+                        through a playful, childlike imagination.
+                    </p>
+
+                    <a href="#geometry" class="view-work">
+                        View artwork →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SIMORGH FEATURE ================= -->
+
+<section id="simorgh" class="feature">
+
+    <div class="section-container">
+
+        <div class="feature-grid">
+
+            <div class="feature-image">
+
+                <img
+                    src="./art1.jpg"
+                    alt="Simorgh by Raha"
+                >
+
+            </div>
+
+
+            <div class="feature-text">
+
+                <div class="section-label">
+                    Featured Work · 01
+                </div>
+
+                <h2 class="section-title">
+                    Simorgh
+                </h2>
+
+                <p>
+                    One of the most enduring creatures of
+                    Persian mythology, the Simorgh represents
+                    wisdom, protection and an extraordinary
+                    bond between imagination and life.
+                </p>
+
+                <p>
+                    This work is inspired by the story of
+                    Zal and Simorgh — a story in which a feather
+                    becomes a symbol of trust and friendship.
+                </p>
+
+                <div class="feature-meta">
+
+                    <span>Medium</span><br>
+                    Hand-drawn artwork
+
+                </div>
+
+                <div class="feature-meta">
+
+                    <span>Collection</span><br>
+                    Raha — Selected Works
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= COLLECTOR SECTION ================= -->
+
+<section id="collectors" class="collectors">
+
+    <div class="section-container">
+
+        <div class="collector-content">
+
+            <div class="section-label">
+                03 · For Collectors
+            </div>
+
+            <h2 class="section-title">
+                Collect a story.
+            </h2>
+
+            <p>
+                These works are created for collectors who
+                value originality, personal stories and art
+                with a human touch.
+            </p>
+
+            <div class="collector-buttons">
+
+                <!-- Replace # with your real Rarible URL -->
+
+                <a
+                    href="#"
+                    class="button primary"
+                    target="_blank"
+                >
+                    View on Rarible
+                </a>
+
+                <!-- Replace # with your X profile -->
+
+                <a
+                    href="#"
+                    class="button"
+                    target="_blank"
+                >
+                    Follow on X
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="story">
+
+    <div class="section-container">
+
+        <div class="story-grid">
+
+            <div>
+
+                <div class="section-label">
+                    04 · Contact
+                </div>
+
+                <h2 class="section-title">
+                    Let's connect.
+                </h2>
+
+            </div>
+
+
+            <div class="story-text">
+
+                <p>
+                    For collecting inquiries, collaborations
+                    or questions about the artworks, please
+                    get in touch.
+                </p>
+
+                <!-- Replace with your real email -->
+
+                <a
+                    href="mailto:YOUR-EMAIL@example.com"
+                    class="button primary"
+                >
+                    Contact the Artist
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            RAHA
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#story">
+                Story
+            </a>
+
+            <a href="#collection">
+                Collection
+            </a>
+
+            <a href="#collectors">
+                Collectors
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Raha Art · All Rights Reserved
+    </div>
+
+</footer>
+
+</body>
+</html>
